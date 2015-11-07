@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?scenebuilder-stylesheet vista.css?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<StackPane fx:id="vista1" prefHeight="398.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.badilos.controller.NewSUController">
+   <children>
+      <TabPane tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Partea I">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0">
+                     <children>
+                        <GridPane alignment="CENTER" hgap="5.0" layoutX="7.0" layoutY="7.0" vgap="5.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="7.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+                            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                              <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+                              <ColumnConstraints hgrow="ALWAYS" maxWidth="282.0" minWidth="10.0" prefWidth="201.0" />
+                              <ColumnConstraints hgrow="NEVER" maxWidth="135.0" minWidth="10.0" prefWidth="130.0" />
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" vgrow="ALWAYS" />
+                            <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="25.0" vgrow="ALWAYS" />
+                            <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="25.0" vgrow="ALWAYS" />
+                              <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="32.0" vgrow="ALWAYS" />
+                              <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="26.0" vgrow="ALWAYS" />
+                              <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="24.0" vgrow="ALWAYS" />
+                              <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="60.0" vgrow="ALWAYS" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="1. Data raportării" GridPane.valignment="CENTER" />
+                              <DatePicker editable="false" promptText="data plecării fortelor" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
+                              <Label text="2. Ora raportării" GridPane.columnIndex="2" GridPane.valignment="CENTER" />
+                              <HBox alignment="CENTER_LEFT" GridPane.columnIndex="3">
+                                 <children>
+                                    <TextField alignment="CENTER" promptText="oră" />
+                                    <Label text=":" />
+                                    <TextField alignment="CENTER" promptText="minut" />
+                                 </children>
+                              </HBox>
+                              <Label text="3. Nr. de ordine" GridPane.columnIndex="4" GridPane.valignment="CENTER" />
+                              <TextField promptText="din registrul subunității" GridPane.columnIndex="5" GridPane.valignment="CENTER" />
+                              <Label text="4. Situația de urgență" GridPane.rowIndex="1" />
+                              <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <TextField HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="btnTipuriSU" alignment="CENTER" mnemonicParsing="false" onAction="#onBtnTipuriSUClicked" text="?" />
+                                 </children>
+                              </HBox>
+                              <Label text="5. Denumire obiectiv" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <TextField GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Label text="6. Domeniu" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <HBox alignment="CENTER_LEFT" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                 <children>
+                                    <TextField />
+                                    <Button fx:id="btnDomeniu" alignment="CENTER" mnemonicParsing="false" onAction="#onBtnDomeniuClicked" text="?" />
+                                 </children>
+                              </HBox>
+                              <Label text="7. Tip obiectiv" GridPane.rowIndex="2" />
+                              <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <TextField HBox.hgrow="ALWAYS" />
+                                    <Button mnemonicParsing="false" text="?" />
+                                 </children>
+                              </HBox>
+                              <Label text="8. Destinație loc" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <HBox alignment="CENTER_LEFT" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                 <children>
+                                    <TextField HBox.hgrow="ALWAYS" />
+                                    <Button mnemonicParsing="false" text="?" />
+                                 </children>
+                              </HBox>
+                              <Label text="9. Coș de fum?" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                              <ComboBox fx:id="comboCosFum" prefWidth="150.0" promptText="alege" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                              <Label text="10. Localitatea" GridPane.rowIndex="3" />
+                              <ComboBox fx:id="comboLocalitate" promptText="alege" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="11. Mediu" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <HBox alignment="CENTER_LEFT" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                 <children>
+                                    <RadioButton mnemonicParsing="false" text="urban">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="grupMediu" />
+                                       </toggleGroup></RadioButton>
+                                    <RadioButton mnemonicParsing="false" text="rural" toggleGroup="$grupMediu" />
+                                 </children>
+                              </HBox>
+                              <Label text="12. Strada" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                              <TextField GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                              <Label text="13. Număr" GridPane.rowIndex="4" />
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label text="14. Bloc" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                              <Label text="15. Etaj" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                              <TextField GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                              <Label text="16. Apartament" GridPane.rowIndex="5" />
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextField GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                              <Label text="17. Distanță" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Label text="18. Momentul anunțării" GridPane.rowIndex="6" />
+                              <VBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <children>
+                                    <DatePicker editable="false" />
+                                    <HBox prefWidth="200.0">
+                                       <children>
+                                          <TextField promptText="oră" />
+                                          <Label text=":" />
+                                          <TextField promptText="minut" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Partea a II-a">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+            <Tab text="Partea a III-a">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</StackPane>

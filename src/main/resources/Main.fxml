@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?scenebuilder-stylesheet vista.css?>
+
+<VBox prefHeight="425.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.badilos.controller.MainController">
+  <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="EviSU">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onFileMenuClose" text="Închide" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Editare">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ajutor">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ToolBar prefHeight="40.0" prefWidth="200.0">
+        <items>
+          <Button fx:id="btnNewSU" mnemonicParsing="false" onAction="#newSUPane" />
+            <Button fx:id="btnNewSMURD" mnemonicParsing="false" onAction="#newSMURDPane" />
+        </items>
+      </ToolBar>
+    <StackPane fx:id="vistaHolder" prefWidth="446.0" VBox.vgrow="ALWAYS" />
+  </children>
+</VBox>
