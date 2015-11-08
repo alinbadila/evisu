@@ -39,16 +39,10 @@ public class EviSU extends Application {
      */
     private Pane loadMainPane() throws IOException {
         FXMLLoader loader = new FXMLLoader();
-
-        //Pane mainPane = (Pane) loader.load(getClass().getResourceAsStream("../resources/Main.fxml"));
         Pane mainPane = (Pane) loader.load(getClass().getClassLoader().getResourceAsStream(VistaNavigator.MAIN));
-
         MainController mainController = loader.getController();
-
         VistaNavigator.setMainController(mainController);
-        //VistaNavigator.loadVista("../resources/NewSU.fxml");
         VistaNavigator.loadVista(VistaNavigator.VISTA_1);
-
         return mainPane;
     }
 
