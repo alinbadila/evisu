@@ -17,9 +17,9 @@ public class VistaNavigator {
     /**
      * Convenience constants for fxml layouts managed by the navigator.
      */
-    public static final String MAIN    = "src/main/resources/Main.fxml";
-    public static final String VISTA_1 = "src/main/resources/NewSU.fxml";
-    public static final String VISTA_2 = "src/main/resources/NewSMURD.fxml";
+    public static final String MAIN    = "Main.fxml";
+    public static final String VISTA_1 = "NewSU.fxml";
+    public static final String VISTA_2 = "NewSMURD.fxml";
 
     /** The main application layout controller. */
     private static MainController mainController;
@@ -54,7 +54,7 @@ public class VistaNavigator {
         try {
             mainController.setVista(
                 (Node) FXMLLoader.load(
-                    VistaNavigator.class.getResource(
+                    VistaNavigator.class.getClassLoader().getResource(
                         fxml
                     )
                 ));

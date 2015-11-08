@@ -41,7 +41,7 @@ public class EviSU extends Application {
         FXMLLoader loader = new FXMLLoader();
 
         //Pane mainPane = (Pane) loader.load(getClass().getResourceAsStream("../resources/Main.fxml"));
-        Pane mainPane = (Pane) loader.load(getClass().getResourceAsStream(VistaNavigator.MAIN));
+        Pane mainPane = (Pane) loader.load(getClass().getClassLoader().getResourceAsStream(VistaNavigator.MAIN));
 
         MainController mainController = loader.getController();
 

@@ -67,10 +67,10 @@ public class MainController implements Initializable {
          * seteaza pictograma butonului de creare raport nou
          */
         try {
-            Image focIcon = new Image(getClass().getResourceAsStream("/pool/foc16px.png"));
+            Image focIcon = new Image(getClass().getClassLoader().getResourceAsStream("foc16px.png"));
             btnNewSU.setGraphic(new ImageView(focIcon));
 
-            Image smurdIcon = new Image(getClass().getResourceAsStream("/pool/smurd16px.png"));
+            Image smurdIcon = new Image(getClass().getClassLoader().getResourceAsStream("smurd16px.png"));
             btnNewSMURD.setGraphic(new ImageView(smurdIcon));
         } catch (Exception e) {
             e.printStackTrace();
