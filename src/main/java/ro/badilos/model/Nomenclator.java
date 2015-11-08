@@ -7,9 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-/**
- * Created by Alin on 28/09/15.
- */
 public class Nomenclator {
     private final SimpleStringProperty capitol;
     private final SimpleStringProperty sectiune;
@@ -70,8 +67,8 @@ public class Nomenclator {
 
     public void showTipuriSU() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/InfoSituatiaProdusa.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("InfoSituatiaProdusa.fxml"));
+            Parent root1 = fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Situația de urgență produsă");
@@ -85,8 +82,8 @@ public class Nomenclator {
 
     public void showDomeniu() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/InfoDomeniu.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("InfoDomeniu.fxml"));
+            Parent root1 = fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Domeniu");
