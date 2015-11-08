@@ -18,9 +18,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-/**
- * Created by Alin on 28/09/15.
- */
 public class InfoSituatiaProdusaController implements Initializable {
 
 
@@ -29,7 +26,7 @@ public class InfoSituatiaProdusaController implements Initializable {
     private Button btnOk;
 
     @FXML
-    private TableView tvSituatiaProdusa;
+    private TableView<Nomenclator> tvSituatiaProdusa;
 
     @FXML
     private TableColumn tcSituatiaGenerala;
@@ -50,7 +47,7 @@ public class InfoSituatiaProdusaController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         Connection con = null;
         Statement stat = null;
-        ObservableList<Nomenclator> data = null;
+        ObservableList<Nomenclator> data;
 
         try {
             Class.forName("org.sqlite.JDBC");
@@ -61,9 +58,8 @@ public class InfoSituatiaProdusaController implements Initializable {
 
             ResultSet rs = con.createStatement().executeQuery("SELECT * FROM SU");
 
-            while (rs.next()) {
+            while (rs.next())
                 data.add(new Nomenclator(rs.getString("tip"), rs.getString("detaliu"), rs.getString("cod")));
-            }
             tcSituatiaGenerala.setCellValueFactory(new PropertyValueFactory("sectiune"));
             tcSituatiaSpecifica.setCellValueFactory(new PropertyValueFactory("descriere"));
             tcCod.setCellValueFactory(new PropertyValueFactory("cod"));
